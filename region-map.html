@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Region Map - Flopia Survival</title>
+    <!-- Подключение Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <div class="main-container">
+        <!-- Логотип -->
+        <a href="index.html">
+            <img src="images/logo.png" alt="Flopia Survival" class="logo">
+        </a>
+
+        <!-- Контейнер для карты -->
+        <div id="regionMap" class="map-container"></div>
+    </div>
+
+    <!-- Подключение Leaflet -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Инициализация карты
+        var map = L.map('regionMap', {
+            minZoom: -2,  // Позволяем отдалять дальше
+            maxZoom: 2,   // Ограничиваем приближение
+            crs: L.CRS.Simple, // Используем систему координат Simple CRS
+        }).setView([0, 0], 0);
+
+        // Указываем размер карты (4608x5120)
+        var imageUrl = 'images/region_map.png'; // Для региональной карты
+        var imageBounds = [[0, 0], [5120, 4608]];
+
+        // Добавляем изображение карты
+        L.imageOverlay(imageUrl, imageBounds).addTo(map);
+
+        // Фокусируем карту на границах
+        map.fitBounds(imageBounds);
+
+        // Ограничиваем движение карты внутри области
+        map.setMaxBounds(imageBounds);
+    </script>
+</body>
+</html>

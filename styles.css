@@ -1,0 +1,141 @@
+/* Основной фон */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Основной контейнер */
+.main-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Логотип с переходом на главную страницу */
+.logo {
+    width: 300px;
+    cursor: pointer;
+}
+
+/* Стили для IP адреса */
+#server-ip {
+    font-size: 24px;
+    color: #dcdcdc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Анимация изменения цвета при наведении на IP */
+#server-ip:hover {
+    color: #8cff8cbd;
+}
+
+/* Стили для кнопок Map и Modpack */
+.map-modpack-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Отступ между кнопками */
+    margin-top: 40px;
+}
+
+.map-modpack-buttons img {
+    width: 200px;
+    transition: transform 0.5s ease;
+}
+
+/* Увеличение кнопки при наведении */
+.map-modpack-buttons img:hover {
+    transform: scale(1.1);
+}
+
+/* Стили для кнопок Discord и Telegram */
+.social-links {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Отступ между кнопками */
+}
+
+.social-links img {
+    width: 60px;
+    transition: transform 0.5s ease;
+}
+
+/* Увеличение иконок при наведении */
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+/* Стили для карт */
+.interactive-map {
+    width: 80%;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Адаптивность для мобильных устройств */
+@media only screen and (max-width: 768px) {
+    .logo {
+        width: 200px;
+    }
+    #server-ip {
+        font-size: 18px;
+    }
+    .map-modpack-buttons img {
+        width: 150px;
+    }
+    .social-links img {
+        width: 40px;
+    }
+}
+/* Основной фон */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Основной контейнер */
+.main-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Логотип */
+.logo {
+    width: 300px;
+    cursor: pointer;
+    margin-bottom: 30px; /* Отступ снизу, чтобы не пересекаться с картой */
+}
+
+/* Контейнер для карты с соотношением сторон 4:3 */
+.map-container {
+    width: 80vw; /* Занимает 80% ширины окна браузера */
+    height: calc(80vw * 0.75); /* Высота = 75% ширины для соотношения 4:3 */
+    max-width: 1200px; /* Максимальная ширина контейнера для карты */
+    max-height: 900px; /* Максимальная высота контейнера для карты (4:3) */
+    border: 2px solid #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
