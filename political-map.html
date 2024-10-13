@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Political Map - Flopia Survival</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <div class="main-container">
+        <a href="index.html">
+            <img src="images/logo.png" alt="Flopia Survival" class="logo">
+        </a>
+        <div id="politicalMap" class="map-container"></div>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('politicalMap', {
+            minZoom: -2,
+            maxZoom: 2,
+            crs: L.CRS.Simple,
+        }).setView([0, 0], 0);
+
+        var imageUrl = 'images/political_map.png';
+        var imageBounds = [[0, 0], [5120, 4608]];
+
+        L.imageOverlay(imageUrl, imageBounds).addTo(map);
+        map.fitBounds(imageBounds);
+        map.setMaxBounds(imageBounds);
+    </script>
+</body>
+</html>
